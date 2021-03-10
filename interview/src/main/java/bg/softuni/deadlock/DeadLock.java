@@ -6,8 +6,8 @@ import java.lang.management.ThreadMXBean;
 
 public class DeadLock {
 
-  private static Object lock1 = new Object();
-  private static Object lock2 = new Object();
+  private static final Object lock1 = new Object();
+  private static final Object lock2 = new Object();
 
   //T1 -> lock(X) -> wait_for(Y)
   //T2 -> lock(Y) -> wait_for(X)
